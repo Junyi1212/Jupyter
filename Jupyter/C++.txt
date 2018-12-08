@@ -1,0 +1,18 @@
+一.强制类型转换
+命名的强制类型转换符号的一般形式如下：
+    cast-name<type>(expression);
+    其中,cast-name为reinterpret_cast,const_cast,static_cast,dynamic_cast。
+1.reinterpret_cast
+    显式强制转换，与用括号效果相同：
+    int* ip;
+    char* pc = (char*)ip;
+    char* pc = reinterpret_cast<char*>(ip);
+2.const_cast
+    顾名思义，将转换掉表达式的const性质：
+    const char *pc_str;
+    char* pc = const_cast<char*>(pc_str);
+3.static_cast
+    编译器隐式执行的任何类型转换都可以由static_cast显式完成。
+    除类层次间的下行转换外。
+4.dynamic_cast
+    主要用于类层次间的上行转换和下行转换。
